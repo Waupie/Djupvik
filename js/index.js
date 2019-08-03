@@ -1,3 +1,22 @@
+import { fetchTableData } from './API.js';
+
+let weatherDisplay = document.querySelector('#weather');
+let temperature;
+
+fetchTableData().then(function(data) {
+    /*console.log(data);*/
+
+    for (let i = 0; i < data.timeSeries[0].parameters.length; i++) {
+        if (data.timeSeries[0].parameters[i].name == "t") {
+            temperature = data.timeSeries[0].parameters[i].values;
+            weatherDisplay.innerHTML = temperature + '<sup id="celciusC">&#8451;</sup>';
+            break;
+        }
+
+    }
+
+});
+
 
 
 
@@ -21,6 +40,7 @@ window.addEventListener("scroll", function() {
     let sixA = document.querySelector('#sixA');
     let menuA = document.querySelector('#menuA');
     let dropDownElement = document.querySelector('.dropdown-content a');
+    let weather = this.document.querySelector('#weather');
     if (this.window.scrollY == 0 || this.window.screenY < 0) {
         element.style.backgroundColor = "rgba(0, 0, 0, 0)";
         element.style.color = "#333";
@@ -32,6 +52,7 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#333";
         menuA.style.color = "#333";
         dropDownElement.style.color = "#333";
+        weather.style.color = "#333";
     } else {
         element.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
         element.style.color = "#fff";
@@ -43,18 +64,23 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#fff";
         menuA.style.color = "#fff";
         dropDownElement = "#fff";
+        weather.style.color = "#fff";
     }
 });
 
+/* Just to see how big the screen size is, REMOVE THIS WHEN DONE */
 window.onresize = function(event) {
 	console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
 }
 
-function toggleMenu() {
+/* Open menu button
+    I changed this from the "onclick"-version to an Event Listener
+*/
+let menuButton = document.querySelector('#menuA');
+menuButton.addEventListener('click', function() {
     let element = document.querySelector('.dropdown-content');
-    if (element.style.display === "none") {
+    if (element.style.display === "none")
         element.style.display = "flex";
-    } else {
+    else
         element.style.display = "none";
-    }
-}
+});

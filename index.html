@@ -6,11 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	    <link rel="stylesheet" href="css/style.css" />
-        <script src="js/index.js" type="text/javascript"></script>
+        <script src="js/index.js" type="module"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <!--
-        <script src="#" type="module"></script>
-        -->
+        
     </head>
     
     <body>
@@ -18,17 +16,7 @@
             
             <nav>
                 <h1>Djupvik</h1>
-
-                <!--
-                <ol id="desktopMenu">
-                    <li><a href="#"></a>Startsida</a></li>
-                    <li><a href="#">Historia</a></li>
-                    <li><a href="#">Gästplats</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Medlemsinfo</a></li>
-                    <li><a href="https://www.youtube.com">Turism</a></li>
-                </ol>
-            -->
+                <h2 id="weather"></h2>
 
                 <ol id="desktopMenu">
                     <a id="oneA" href="#">Startsida</a>
@@ -39,23 +27,22 @@
                     <a id="sixA" href="#">Turism</a>
                 </ol>
 
-                <div class="dropdown-content">
-                        <a href="#">Startsida</a>
-                        <a href="#">Historia</a>
-                        <a href="#">Gästplats</a>
-                        <a href="#">Kontakt</a>
-                    </div>
+                
 
-                <a onclick="toggleMenu()" id="menuA" class="dropdown" href="#">Menu</a>
-            
+                <p id="menuA" class="dropdown" href="#">Menu</p>
+                
             </nav>
 
             <div class="dropdown-content">
-                <p>Hello World!</p>
-                <p>Hello World!</p>
-                <p>Hello World!</p>
-                <p>Hello World!</p>
+                <a id="oneA" href="#">Startsida</a>
+                <a id="twoA" href="#">Historia</a>
+                <a id="threeA" href="#">Gästplats</a>
+                <a id="fourA" href="#">Kontakt</a>
+                <a id="fiveA" href="#">Medlemsinfo</a>
+                <a id="sixA" href="#">Turism</a>
             </div>
+
+            
 
         </header>
         <section class="sec1">

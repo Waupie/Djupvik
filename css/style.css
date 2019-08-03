@@ -22,7 +22,8 @@ header nav {
     position: fixed;
     top: 0;
     width: 100%;
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 header nav a {
@@ -62,16 +63,18 @@ header nav .dropdown {
 
 /* Dropdown menu on mobile version */
 .dropdown-content {
-    margin-right: 1em;
-    padding: 0;
     display: none;
-    position: absolute;
-    align-items: center;
+    position: fixed;
+    margin-top: 6em;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
 
 }
-.dropdown-content p {
-    padding: 0;
+.dropdown-content a {
+    padding: 0.5em 1em 0.5em 1em;
     margin: 0;
+    color: #fff;
 }
 
 
@@ -81,18 +84,39 @@ header nav ol a {
     font-size: 1.05em;
 }
 
-@media (max-width: 700px) {
+#weather {
+    
+    color: #333;
+}
+
+#celciusC {
+    font-size: 0.7em;
+}
+
+@media (max-width: 800px) {
     #desktopMenu {
         display: none;
     }
 
     header nav .dropdown {
-        display: block;
+        display: inline-block;
     }
 
     .dropdown:hover .dropdown-content {
-        display: block;
+        display: flex;
         background-color: red;
     }
 
+    #weather {
+        padding-left: 0.7em;
+        order: -1;
+        margin-left: 0.1em;
+    }
+
+}
+
+@media (min-width: 801) {
+    header nav .dropdown {
+        display: none;
+    }
 }
