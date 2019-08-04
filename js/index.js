@@ -17,12 +17,12 @@ fetchTableData().then(function(data) {
 
 });
 
-
-
-
 /* Lägger till CSS som gör navbar mörk när man scrollar ner */
 
 window.addEventListener("scroll", function() {
+    let dropdownContent = this.document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none';
+
     let element = document.querySelector('nav');
     let oneA = document.querySelector('#oneA');
     let twoA = document.querySelector('#twoA');
@@ -62,7 +62,9 @@ window.addEventListener("scroll", function() {
 
 /* Just to see how big the screen size is, REMOVE THIS WHEN DONE */
 window.onresize = function(event) {
-	console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
+    console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
+    let dropdownContent = this.document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none';
 }
 
 /* Open menu button
