@@ -21,14 +21,6 @@ fetchTableData().then(function(data) {
 
 
 /* Lägger till CSS som gör navbar mörk när man scrollar ner */
-window.addEventListener("scroll", function() {
-    let element = document.querySelector("nav");
-    if(window.scrollY == 0) {
-        element.classList.remove("black");
-    } else {
-        element.classList.add("black");
-    }
-});
 
 window.addEventListener("scroll", function() {
     let element = document.querySelector('nav');
@@ -54,7 +46,7 @@ window.addEventListener("scroll", function() {
         dropDownElement.style.color = "#333";
         weather.style.color = "#333";
     } else {
-        element.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        element.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         element.style.color = "#fff";
         oneA.style.color = "#fff";
         twoA.style.color = "#fff";

@@ -3,8 +3,12 @@ body {
     padding: 0;
     font-family: Quicksand, sans-serif;
     color: #333;
+    background-color: rgb(161, 161, 161);
 }
 
+/*
+    All CSS code for the navbar and header
+*/
 header {
     width: 100%;
     height: 100vh;
@@ -67,7 +71,7 @@ header nav .dropdown {
     position: fixed;
     margin-top: 6em;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     right: 0;
 
 }
@@ -93,6 +97,27 @@ header nav ol a {
     font-size: 0.7em;
 }
 
+/*
+    All CSS code for the navbar and header ENDS here
+*/
+
+
+section {
+    margin: 3em 5em 3em 5em;
+    padding: 0.001em 1em 0.005em 1em;
+    /*background-color: #AAAAAA;*/
+    background-color: #fff;
+    
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 800px) {
     #desktopMenu {
         display: none;
@@ -113,10 +138,12 @@ header nav ol a {
         margin-left: 0.1em;
     }
 
+    section {
+        margin: 1.5em;
+    }
 }
 
-@media (min-width: 801) {
-    header nav .dropdown {
-        display: none;
-    }
+@media (min-width: 1200px) {
+    
+    
 }
