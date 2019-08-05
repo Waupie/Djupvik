@@ -11,7 +11,7 @@ body {
 header {
     width: 100%;
     height: 100vh;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     background: url('../images/D-12.jpg');
     background-size: cover;
 }
@@ -44,6 +44,7 @@ header nav h1 {
     display: flex;
     align-items: center;
     float: left;
+    font-size: 1em;
 }
 
 header nav ol {
@@ -96,13 +97,21 @@ header nav ol a {
     font-size: 0.7em;
 }
 
-
-
 /*
     All CSS code for the navbar and header ENDS here
 */
 
+table {
+    display: block;
+    border: 1px solid red;
+    position: absolute;
+    margin-top: 7em;
+    margin-left: 1em;
+}
 
+table th, td {
+    background-color: red;
+}
 
 main .title {
     margin-top: 1em;
@@ -113,13 +122,13 @@ main .title {
 section {
     margin: 1em 5em 3em 5em;
     padding: 0.001em 1em 0.005em 1em;
-    /*background-color: #AAAAAA;*/
-    background-color: #fff;
-    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    background-color: #5F9EA0;
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5);
     
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 1em;
+    border-radius: 1em;
 }
 
 section img {
