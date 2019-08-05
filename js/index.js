@@ -4,25 +4,46 @@ let weatherDisplay = document.querySelector('#weather');
 let temperature;
 
 fetchTableData().then(function(data) {
-    /*console.log(data);*/
+    let table = document.querySelector('table');
+    let time = 1;
 
-    for (let i = 0; i < data.timeSeries[0].parameters.length; i++) {
-        if (data.timeSeries[0].parameters[i].name == "t") {
-            temperature = data.timeSeries[0].parameters[i].values;
+    console.log(data);
+
+    for (let i = 0; i < data.timeSeries[time].parameters.length; i++) {
+        
+        if (data.timeSeries[time].parameters[i].name == "t") {
+            temperature = data.timeSeries[time].parameters[i].values;
             weatherDisplay.innerHTML = temperature + '<sup id="celciusC">&#8451;</sup>';
-            break;
         }
-
+        
     }
 
 });
 
+console.log("Current hour is " + getTime(0));
+console.log("Time in 3 hours " + getTime(3));
+console.log("Time in 6 hours " + getTime(25));
 
+function getTime(number) {
+    let d = new Date();
+    let n = d.getHours();
+
+    if (n + number > 24) {
+        n = n + number - 24;
+    } else {
+        n += number;
+    }
+
+    return n;
+}
 
 
 /* Lägger till CSS som gör navbar mörk när man scrollar ner */
 
 window.addEventListener("scroll", function() {
+    let dropdownContent = this.document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none';
+
     let element = document.querySelector('nav');
     let oneA = document.querySelector('#oneA');
     let twoA = document.querySelector('#twoA');
@@ -60,9 +81,13 @@ window.addEventListener("scroll", function() {
     }
 });
 
+
+
 /* Just to see how big the screen size is, REMOVE THIS WHEN DONE */
 window.onresize = function(event) {
-	console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
+    console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
+    let dropdownContent = this.document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none';
 }
 
 /* Open menu button
