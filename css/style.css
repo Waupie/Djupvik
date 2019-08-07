@@ -103,14 +103,16 @@ header nav ol a {
 
 table {
     display: block;
-    border: 1px solid red;
     position: absolute;
     margin-top: 7em;
     margin-left: 1em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-table th, td {
-    background-color: red;
+table tr, td {
+    padding: 0.3em;
+    text-align: center;
 }
 
 main .title {

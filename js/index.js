@@ -1,41 +1,65 @@
 import { fetchTableData } from './API.js';
 
-let weatherDisplay = document.querySelector('#weather');
 let temperature;
 
 fetchTableData().then(function(data) {
     let table = document.querySelector('table');
-    let time = 1;
-
     console.log(data);
 
-    for (let i = 0; i < data.timeSeries[time].parameters.length; i++) {
-        
-        if (data.timeSeries[time].parameters[i].name == "t") {
-            temperature = data.timeSeries[time].parameters[i].values;
-            weatherDisplay.innerHTML = temperature + '<sup id="celciusC">&#8451;</sup>';
+    function displayTableData(number, time) {
+        for (let i = 0; i < data.timeSeries[number].parameters.length; i++) {        
+            if (data.timeSeries[number].parameters[i].name == "t") {
+                table.innerHTML += getTableHTML(getTime(time), data.timeSeries[number].parameters[i].values);
+            }       
         }
-        
     }
+
+    displayTableData(2, 0); //Displays weather right now
+    displayTableData(5, 3); //Displays weather in 3 hours
+    displayTableData(8, 6); //Displays weather in 6 hours
 
 });
 
+function derpTest(time, n) {
+    for (let i = 0; i < data.timeSeries[n].parameters.length; i++) {
+        
+        if (data.timeSeries[n].parameters[i].name == "t") {
+            table.innerHTML += getTableHTML(getTime(time), data.timeSeries[n].parameters[i].values);
+        }
+        
+    }
+}
+
 console.log("Current hour is " + getTime(0));
 console.log("Time in 3 hours " + getTime(3));
-console.log("Time in 6 hours " + getTime(25));
+console.log("Time in 25 hours " + getTime(25));
 
+/*
+ * Metod som returnerar tid i timmar,
+ * parametern number är antal timmar in i framtiden från och med nuvarande tid
+ */
 function getTime(number) {
     let d = new Date();
     let n = d.getHours();
 
     if (n + number > 24) {
         n = n + number - 24;
+        if (n < 10)
+            n = "0" + n;
     } else {
         n += number;
+        if (n < 10)
+            n = "0" + n;
     }
 
-    return n;
+    return n + ":00";
 }
+
+function getTableHTML(time, temp) {
+    return ("<tr><td>" + time + "</td><td>" + temp + " &deg;C</td><td>Sol</td></tr>");
+}
+
+
 
 
 /* Lägger till CSS som gör navbar mörk när man scrollar ner */
@@ -53,7 +77,6 @@ window.addEventListener("scroll", function() {
     let sixA = document.querySelector('#sixA');
     let menuA = document.querySelector('#menuA');
     let dropDownElement = document.querySelector('.dropdown-content a');
-    let weather = this.document.querySelector('#weather');
     if (this.window.scrollY == 0 || this.window.screenY < 0) {
         element.style.backgroundColor = "rgba(0, 0, 0, 0)";
         element.style.color = "#333";
@@ -65,7 +88,6 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#333";
         menuA.style.color = "#333";
         dropDownElement.style.color = "#333";
-        weather.style.color = "#333";
     } else {
         element.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         element.style.color = "#fff";
@@ -77,7 +99,6 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#fff";
         menuA.style.color = "#fff";
         dropDownElement = "#fff";
-        weather.style.color = "#fff";
     }
 });
 
