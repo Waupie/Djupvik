@@ -26,19 +26,15 @@
                     <a id="fourA" href="../html/kontakt.html">Kontakt</a>
                     <a id="fiveA" href="../html/medlemsinfo.html">Medlemsinfo</a>
                     <a id="sixA" href="../html/turism.html">Turism</a>
+                    <a id="sevenA" href="../html/väder.html">Väder</a>
                 </ol>
 
-                <p id="menuA" class="dropdown" href="#">Menu</p>
+                <p id="menuA" class="dropdown" href="#">Meny</p>
                 
             </nav>
 
             <!-- Table to show forecast -->
             <table>
-                <tr>
-                    <td></td>
-                    <td>Väder</td>
-                    <td></td>
-                </tr>
                 <tr>
                     <th>
                         Tid
@@ -46,9 +42,6 @@
                     <th>
                         Temp
                     </td>
-                    <th>
-                        Väder
-                    </th>
                 </tr>
             </table>
 
@@ -59,10 +52,12 @@
                 <a href="../html/kontakt.html">Kontakt</a>
                 <a href="../html/medlemsinfo.html">Medlemsinfo</a>
                 <a href="../html/turism.html">Turism</a>
+                <a href="../html/väder.html">Väder</a>
             </div>
 
             <div id="arrow-down">
                 <h1>&#11167;</h1>
+                <p>Ner till kontaker</p>
             </div>
             
 
@@ -70,9 +65,43 @@
         <!-- HEADER ENDS -->
 
         <!-- MAIN -->
-        <main>
+        <main id="kontakt">
 
-            
+            <section>
+                <h1 class="title">Kontaktuppgifter</h1>
+                <p class="title">Hamnfogde Bo Lautin, mobil <span>0707-920310</span></p>
+                <p class="title">Djupviks hamnförening</p>
+                <p class="title">c/o Ekholm</p>
+                <p class="title">Eksta Hägur 170</p>
+                <p class="title">623 54 Klintehamn</p>
+                    
+            </section>
+
+            <section>
+                <h1 class="title">Kontaktformulär</h1>
+                <form>
+                    <label>Namn</label>
+                    <input type="text" placeholder="Ditt förnamn och efternamn.."/>
+
+                    <label>Email</label>
+                    <input type="text" placeholder="Din email..."/>
+
+                    <label>Telefon</label>
+                    <input type="text" placeholder="Ditt mobilnummer.."/>
+
+                    <label>Ärende</label><br/>
+                    <select>
+                        <option value="Båtplats">Båtplats</option>
+                        <option value="Medlemsskap">Medlemsskap</option>
+                        <option value="Övrigt">Övrigt</option>
+                    </select><br/>
+
+                    <label>Meddelande</label><br/>
+                    <textarea placeholder="Skriv ditt meddelande här.."></textarea>
+
+                    <input type="submit" value="Skicka"/>
+                </form>
+            </section>
 
         </main>
         <!-- MAIN ENDS -->

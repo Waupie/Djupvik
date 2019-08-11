@@ -4,7 +4,6 @@ let temperature;
 
 fetchTableData().then(function(data) {
     let table = document.querySelector('table');
-    console.log(data);
 
     function displayTableData(number, time) {
         for (let i = 0; i < data.timeSeries[number].parameters.length; i++) {        
@@ -17,13 +16,12 @@ fetchTableData().then(function(data) {
     displayTableData(2, 0); //Displays weather right now
     displayTableData(5, 3); //Displays weather in 3 hours
     displayTableData(8, 6); //Displays weather in 6 hours
+    displayTableData(11, 9); //Displays weather in 9 hours;
+    displayTableData(14, 12); //Displays weather in 12 hours;
+
+    
 
 });
-
-
-console.log("Current hour is " + getTime(0));
-console.log("Time in 3 hours " + getTime(3));
-console.log("Time in 25 hours " + getTime(25));
 
 /*
  * Metod som returnerar tid i timmar,
@@ -47,7 +45,7 @@ function getTime(number) {
 }
 
 function getTableHTML(time, temp) {
-    return ("<tr><td>" + time + "</td><td>" + temp + " &deg;C</td><td>Sol</td></tr>");
+    return ("<tr><td>" + time + "</td><td>" + temp + " &deg;C</td></tr>");
 }
 
 
@@ -58,6 +56,7 @@ function getTableHTML(time, temp) {
 window.addEventListener("scroll", function() {
     let dropdownContent = this.document.querySelector('.dropdown-content');
     dropdownContent.style.display = 'none';
+    
 
     let element = document.querySelector('nav');
     let oneA = document.querySelector('#oneA');
@@ -66,6 +65,7 @@ window.addEventListener("scroll", function() {
     let fourA = document.querySelector('#fourA');
     let fiveA = document.querySelector('#fiveA');
     let sixA = document.querySelector('#sixA');
+    let sevenA = document.querySelector('#sevenA');
     let menuA = document.querySelector('#menuA');
     let dropDownElement = document.querySelector('.dropdown-content a');
     if (this.window.scrollY == 0 || this.window.screenY < 0) {
@@ -79,6 +79,7 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#333";
         menuA.style.color = "#333";
         dropDownElement.style.color = "#333";
+        sevenA.style.color = "#333";
     } else {
         element.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         element.style.color = "#fff";
@@ -90,6 +91,7 @@ window.addEventListener("scroll", function() {
         sixA.style.color = "#fff";
         menuA.style.color = "#fff";
         dropDownElement = "#fff";
+        sevenA.style.color = "#fff";
     }
 });
 
