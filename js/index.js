@@ -68,6 +68,7 @@ window.addEventListener("scroll", function() {
     let sevenA = document.querySelector('#sevenA');
     let menuA = document.querySelector('#menuA');
     let dropDownElement = document.querySelector('.dropdown-content a');
+    let englishA = this.document.querySelector('#englishA');
     if (this.window.scrollY == 0 || this.window.screenY < 0) {
         element.style.backgroundColor = "rgba(0, 0, 0, 0)";
         element.style.color = "#333";
@@ -80,6 +81,7 @@ window.addEventListener("scroll", function() {
         menuA.style.color = "#333";
         dropDownElement.style.color = "#333";
         sevenA.style.color = "#333";
+        englishA.style.color = "#333"
     } else {
         element.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         element.style.color = "#fff";
@@ -92,6 +94,7 @@ window.addEventListener("scroll", function() {
         menuA.style.color = "#fff";
         dropDownElement = "#fff";
         sevenA.style.color = "#fff";
+        englishA.style.color = "#fff"
     }
 });
 
@@ -99,7 +102,6 @@ window.addEventListener("scroll", function() {
 
 /* Just to see how big the screen size is, REMOVE THIS WHEN DONE */
 window.onresize = function(event) {
-    console.log("x: " + window.innerWidth+"      y: " + window.innerHeight);
     let dropdownContent = this.document.querySelector('.dropdown-content');
     dropdownContent.style.display = 'none';
 }
