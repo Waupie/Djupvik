@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: Quicksand, sans-serif;
     color: #333;
+    background-color: #efefef;
 }
 
 /*
@@ -11,7 +12,6 @@ body {
 header {
     width: 100%;
     height: 100vh;
-    /*box-sizing: border-box;*/
     background: url('../images/D-12.jpg');
     background-size: cover;
 }
@@ -27,6 +27,11 @@ header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-size: 1.5em;
+}
+
+#titel {
+    font-size: 1.5em;
 }
 
 header nav a {
@@ -69,17 +74,20 @@ header nav .dropdown {
 .dropdown-content {
     display: none;
     position: fixed;
-    margin-top: 6em;
+    margin-top: 9em;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8);
     right: 0;
-
+    color: #fff;
+    z-index: 1;
 }
 .dropdown-content a {
     padding: 0.5em 1em 0.5em 1em;
     margin: 0;
     color: #fff;
+    font-size: 1.5em;
 }
+
 
 
 header nav ol a {
@@ -97,22 +105,42 @@ header nav ol a {
     font-size: 0.7em;
 }
 
+#arrow-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+#arrow-down h1 {
+    color: #333;
+    padding: 0;
+    margin: 0;
+    font-size: 5em;
+}
+#arrow-down p {
+    font-size: 1.5em;
+}
+
+header table {
+    display: none;
+    position: absolute;
+    margin-top: 8em;
+    margin-left: 1em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 1em; 
+}
+
+header table tr, td {
+    text-align: center;
+}
+
 /*
     All CSS code for the navbar and header ENDS here
 */
 
-table {
-    display: block;
-    position: absolute;
-    margin-top: 7em;
-    margin-left: 1em;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-table tr, td {
-    padding: 0.3em;
-    text-align: center;
+main {
+    font-size: 1.3em;
 }
 
 main .title {
@@ -123,22 +151,165 @@ main .title {
 
 section {
     margin: 1em 5em 3em 5em;
-    padding: 0.001em 1em 0.005em 1em;
-    background-color: #5F9EA0;
+    padding: 1em 1em 0.005em 1em;
+    background-color: #fff;
     box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5);
-    
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 1em;
     border-radius: 1em;
+    padding: 0 0.5em 1em 0.5em;
 }
 
-section img {
+
+
+#bildFramsida {
+    max-width: 20em;
+    float: right;
+}
+
+/*
+ *  Stilmall för historia.html
+ */
+
+#historia table th, td {
+    padding: 1em;;
+}
+#historia tr th:nth-child(1), td:nth-child(1) {
+    text-align: right;
+}
+#historia tr th:nth-child(2), td:nth-child(2) {
+    text-align: left;
+}
+
+#historia section img {
     width: 100%;
-    height: auto;
+    max-width: 15em;
+    display: block;
+    margin: auto;
+}
+#historia section #konradNamn {
+    text-align: center;
 }
 
-@media (max-width: 800px) {
+/*
+ * Stilmall för historia.html slutar här
+ */
+
+
+
+/*
+ *  Stilmall för kontakt.html
+ */
+
+
+
+section {
+    overflow: auto;
+}
+
+#kontakt span {
+    font-weight: bolder;
+}
+
+#kontakt form {
+    padding: 1em;
+}
+
+#kontakt form input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#kontakt form input[type=text], select, textarea {
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+#kontakt form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 8em;
+}
+#kontakt form input[type=submit] {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5em 1em 1.5em 1em;
+    border: none;
+    border-radius: 0.5em;
+    width: 8em;
+    
+}
+#kontakt form input[type=submit]:hover {
+    background-color: rgb(71, 180, 86);
+    color: #333;
+  }
+
+/*
+ * Stilmall för kontakt.html slutar här
+ */
+
+ #medlemsinfo table {
+     margin: auto;
+ }
+ #medlemsinfo table th, td {
+    margin: auto;
+}
+
+#turism #badplats {
+    max-width: 20em;
+    float: right;
+}
+
+#turism a {
+    text-decoration: none;
+    color: #333;
+}
+
+#väder table {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+#english figure, #turism figure {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    main {
+        font-size: 1em;
+    }
+    section {
+        margin: 1em 5em 3em 5em;
+        padding: 1em 1em 0.005em 1em;
+        background-color: #fff;
+        box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+        padding: 0 0.5em 1em 0.5em;
+        
+    }
+
+    
+    #bildFramsida {
+        max-width: 20em;
+        display: block;
+        margin: auto;
+        width: 50%;
+        
+    }
+
+}
+
+figure img {
+    width:100%;
+    float:left;
+    margin: 0;
+    text-align:center;
+    padding: 0;
+}
+
+@media (max-width: 801px) {
     #desktopMenu {
         display: none;
     }
@@ -149,7 +320,7 @@ section img {
 
     .dropdown:hover .dropdown-content {
         display: flex;
-        background-color: red;
+        
     }
 
     #weather {
@@ -161,11 +332,68 @@ section img {
     section {
         margin: 1.5em;
     }
+
+    #titel {
+        font-size: 1.5em;
+    }
+    #desktopMenu {
+        font-size: 0.4em;
+    }
+
+
 }
 
-@media (min-width: 1200px) {
-    main {
-        width: 50%;
-        margin: auto;
+@media (min-width: 801px) {
+    #desktopMenu {
+        font-size: 0.6em;
     }
+}
+
+
+
+
+@media (min-width: 1001px) {
+    #desktopMenu {
+        font-size: 0.8em;
+    }
+
+    figure img {
+        width:50%;
+        float:left;
+        margin: 0;
+        text-align:center;
+        padding: 0;
+    }
+
+    header table {
+        display: block;
+    }
+}
+
+@media (min-width: 1201px) {
+    #desktopMenu {
+        font-size: 1em;
+    }
+
+    main {
+        width: 80%;
+        margin: auto;
+        
+    }
+
+
+
+    header table {
+        display: block;
+        position: absolute;
+        margin-top: 15em;
+        margin-left: 4em;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #titel {
+        font-size: 2em;
+    }
+
 }
