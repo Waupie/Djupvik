@@ -27,6 +27,11 @@ header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-size: 1.5em;
+}
+
+#titel {
+    font-size: 1.5em;
 }
 
 header nav a {
@@ -69,17 +74,19 @@ header nav .dropdown {
 .dropdown-content {
     display: none;
     position: fixed;
-    margin-top: 6em;
+    margin-top: 9em;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8);
     right: 0;
-
+    color: #fff;
 }
 .dropdown-content a {
     padding: 0.5em 1em 0.5em 1em;
     margin: 0;
     color: #fff;
+    font-size: 1.5em;
 }
+
 
 
 header nav ol a {
@@ -97,6 +104,19 @@ header nav ol a {
     font-size: 0.7em;
 }
 
+#arrow-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+#arrow-down h1 {
+    color: #333;
+    padding: 0.3em;
+    margin-bottom: 0.01em;
+    font-size: 5em;
+}
+
 /*
     All CSS code for the navbar and header ENDS here
 */
@@ -104,7 +124,7 @@ header nav ol a {
 table {
     display: block;
     position: absolute;
-    margin-top: 7em;
+    margin-top: 8em;
     margin-left: 1em;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
@@ -124,13 +144,14 @@ main .title {
 section {
     margin: 1em 5em 3em 5em;
     padding: 0.001em 1em 0.005em 1em;
-    background-color: #5F9EA0;
+    /*background-color: #5F9EA0;*/
     box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.5);
     
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 1em;
     border-radius: 1em;
+    border: 2px solid black;
 }
 
 section img {
@@ -161,11 +182,41 @@ section img {
     section {
         margin: 1.5em;
     }
+
+    #titel {
+        font-size: 1.5em;
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 901px) and (max-width: 1200px) {}
+
+@media (min-width: 1201px) {
     main {
-        width: 50%;
+        width: 80%;
         margin: auto;
+        font-size: 1.5em;
     }
+
+    header {
+        font-size: 1.5em;
+        
+    }
+
+    nav {
+        font-size: 2em;
+    }
+
+    table {
+        display: block;
+        position: absolute;
+        margin-top: 15em;
+        margin-left: 6em;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #titel {
+        font-size: 2em;
+    }
+
 }

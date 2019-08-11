@@ -20,15 +20,6 @@ fetchTableData().then(function(data) {
 
 });
 
-function derpTest(time, n) {
-    for (let i = 0; i < data.timeSeries[n].parameters.length; i++) {
-        
-        if (data.timeSeries[n].parameters[i].name == "t") {
-            table.innerHTML += getTableHTML(getTime(time), data.timeSeries[n].parameters[i].values);
-        }
-        
-    }
-}
 
 console.log("Current hour is " + getTime(0));
 console.log("Time in 3 hours " + getTime(3));
